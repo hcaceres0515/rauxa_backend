@@ -5,7 +5,7 @@ export default class Form extends React.Component {
   state = {
     name: '',
     phone: '',
-    img: ''
+    imgUrl: ''
   }
 
   change = e => {
@@ -21,7 +21,7 @@ export default class Form extends React.Component {
       {
         name: '',
         phone: '',
-        img: ''
+        imgUrl: ''
       }
     );
 
