@@ -5,13 +5,28 @@ export default class Form extends React.Component {
   state = {
     name: '',
     phone: '',
-    imgUrl: ''
+    imgUrl: '',
+    imgName: ''
   }
 
   change = e => {
     this.setState({
       [e.target.name]: e.target.value
     })
+  }
+
+  handleselectedFile = e => {    
+    let file = e.target.files[0];
+
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onload=(e)=>{
+      this.setState({
+        'imgUrl': e.target.result.split(',')[1],
+        'imgName': file.name
+      })
+    }
   }
 
   onSubmit = (e) => {
@@ -49,7 +64,7 @@ export default class Form extends React.Component {
           </div>
 
           <div className="form-group row">
-            <input type="file" className="form-control" />
+            <input type="file" className="form-control" onChange={e => this.handleselectedFile(e)}/>
           </div>
 
           <button className="btn btn-primary btn-xs" onClick={(e) => this.onSubmit(e)}> Save </button>
