@@ -5,7 +5,7 @@ export default class Form extends React.Component {
   state = {
     name: '',
     phone: '',
-    imgUrl: '',
+    base64Image: '',
     imgName: ''
   }
 
@@ -15,7 +15,7 @@ export default class Form extends React.Component {
     })
   }
 
-  handleselectedFile = e => {    
+  handleselectedFile = e => {
     let file = e.target.files[0];
 
     let reader = new FileReader();
@@ -23,7 +23,7 @@ export default class Form extends React.Component {
 
     reader.onload=(e)=>{
       this.setState({
-        'imgUrl': e.target.result.split(',')[1],
+        'base64Image': e.target.result.split(',')[1],
         'imgName': file.name
       })
     }
@@ -36,11 +36,10 @@ export default class Form extends React.Component {
       {
         name: '',
         phone: '',
-        imgUrl: ''
+        base64Image: ''
       }
     );
 
-    // console.log(this.state);
   }
 
   render() {

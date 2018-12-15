@@ -39,12 +39,7 @@ class App extends Component {
       })
   }
 
-  async saveImg(base64Image, imgName) {
-
-    var img = {
-       base64Image: base64Image,
-       imageName: imgName
-    }
+  async saveImg(fields) {
 
     try {
       let response = await fetch('https://sn6cz2ac3b.execute-api.us-east-2.amazonaws.com/dev/uploadImage', {
@@ -52,13 +47,13 @@ class App extends Component {
         headers: {
           'Content-type': 'application/json',
         },
-        body: JSON.stringify(img)
+        body: JSON.stringify(fields)
       });
 
-      let responseJson = await response.json();      
+      let responseJson = await response.json();
       return responseJson.result;
     } catch (e) {
-      
+
     }
     this.getData();
 
@@ -87,7 +82,7 @@ class App extends Component {
   }
 
   onSubmit = fields => {
-    this.sendData(fields);
+    this.saveImg(fields);
   }
 
   render() {
@@ -101,7 +96,7 @@ class App extends Component {
 
           <div className="container">
 
-            {/*<h2 className="mt-5 mb-5"> Rauxa Challenge </h2> */}
+            <h2 className="mt-5 mb-5"> Rauxa Challenge </h2>
 
             <div className="row">
               <Form onSubmit={fields => this.onSubmit(fields)}/>
