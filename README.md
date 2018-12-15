@@ -10,7 +10,7 @@ You need to go to this link and you will see the image below:
 
 ### Architecture
 
-A step by step series of examples that tell you how to get a development env running
+The architecture is represented in the image below:
 
 ![React App](https://s3.us-east-2.amazonaws.com/rauxabucket/RauxaArchitecture.png)
 
