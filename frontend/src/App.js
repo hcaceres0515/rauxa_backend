@@ -22,7 +22,6 @@ class App extends Component {
     fetch("https://cz5yc10n2g.execute-api.us-east-2.amazonaws.com/dev")
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         {
           let posts = data.map((item, index)=> {
             return (
@@ -30,7 +29,7 @@ class App extends Component {
                 <th scope="row">{index}</th>
                 <td>{item.name}</td>
                 <td>{item.phone}</td>
-                <td><img src={S3_URL+item.imgUrl} width="80" height="80"></img></td>
+                <td><img src={S3_URL+item.imgUrl} width="80" height="80"/></td>
               </tr>
             )
           })

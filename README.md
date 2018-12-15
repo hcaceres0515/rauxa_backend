@@ -6,6 +6,9 @@ This project uses the AWS service. We have backend and frontend folder. In the b
 
 You need to go to this link and you will see the image below:
 
+[React app](http://ec2-18-219-252-242.us-east-2.compute.amazonaws.com:3000/)
+
+
 ![React App](https://s3.us-east-2.amazonaws.com/rauxabucket/react-frontend.png)
 
 ### Architecture
